@@ -32,15 +32,15 @@ OS: Linux
 ## 那麼就開始吧
 
 需要的工具有三個：
-* xclip    - to get selected text
-* xdotool  - to simulate keyboard input
-* xbindkey - to bind a shortcut to our script
+* xclip - to get selected text
+* xdotool - to simulate keyboard input
+* xbindkeys - to bind a shortcut to our script
 
 ###首先來安裝工具
 
 在terminal輸入：
 
-    $ sudo apt-get install xclip xdotool xbindkey
+    $ sudo apt-get install xclip xdotool xbindkeys
 
 
 ###接著來寫script
