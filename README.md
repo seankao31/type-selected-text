@@ -9,7 +9,7 @@ OS: Linux
 
 ## 簡介
 
-本文會帶領你設定一個快捷鍵，其功能是將你選取的文字重新輸入一次。 
+本文會幫助你設定一個快捷鍵，其功能是將你選取的文字在游標位置重新輸入一次。 
 
 使用範例： 
 
@@ -29,75 +29,22 @@ OS: Linux
 至於非法的輸入，結果會因輸入法引擎而異。 
 
 
-## 那麼就開始吧
+## 使用的工具
 
-需要的工具有三個：
 * xclip - to get selected text
 * xdotool - to simulate keyboard input
 * xbindkeys - to bind a shortcut to our script
 
-###首先來安裝工具
+## 安裝
 
-在terminal輸入：
+將以下指令複製到terminal：
 
-    $ sudo apt-get install xclip xdotool xbindkeys
+    $ git clone https://github.com/seankao31/type-selected-text
+    $ cd type-selected-text && ./install.sh
 
+完成！
 
-###接著來寫script
-
-用你最愛的文字編輯器vim開啟新檔案（路徑、檔名隨意）： 
-
-    $ vim $HOME/bin/type_selected_text
-
-或者若你不會使用vim： 
-
-    $ gedit $HOME/bin/type_selected_text
-
-
-將以下內容複製貼上： 
-
-    #!/bin/bash
-
-    text=$(xclip -o)
-    xdotool type "$text"
-
-
-儲存、退出。 
-
-
-
-把檔案變成可執行檔（注意路徑、檔名）： 
-
-    $ chmod +x $HOME/bin/type_selected_text
-
-
-
-###最後來把快捷鍵搞定
-
-先開啟（新增）一個config file： 
-
-    $ gedit $HOME/.xbindkeysrc
-
-將以下內容複製貼上： 
-
-    "sleep 0.3 && bin/type_selected_text"
-    Control+y
-
-將bin/type_selected_text改成你在前幾步決定的絕對路徑、檔名；Control+y改成任何你喜歡的快捷鍵。 
-
-
-儲存、退出。 
-
-開啟xbindkeys： 
-
-    $ xbindkeys
-
-
-###完成了！ 
-
-恭喜你啊。
-
-
+預設的快捷鍵是Control+y，可以在 ~/.xbindkeysrc 修改。
 
 
 ## TODO
